@@ -32,7 +32,7 @@ func SavePrivateKey(privateKey *rsa.PrivateKey) (err error) {
 			Type:  "RSA PRIVATE KEY",
 			Bytes: x509.MarshalPKCS1PrivateKey(privateKey),
 		})
-	err = ioutil.WriteFile("key.pri", pemPriv, 0644)
+	err = ioutil.WriteFile("private.pem", pemPriv, 0644)
 
 	return
 }
@@ -45,7 +45,7 @@ func SavePublicKey(publicKey *rsa.PublicKey) (err error) {
 			Type:  "RSA PUBLIC KEY",
 			Bytes: pubBytes,
 		})
-	err = ioutil.WriteFile("key.pub", pemPub, 0644)
+	err = ioutil.WriteFile("public.pem", pemPub, 0644)
 
 	return
 }
